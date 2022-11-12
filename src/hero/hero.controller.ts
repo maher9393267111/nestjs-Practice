@@ -17,8 +17,7 @@ import {
   import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
   @ApiTags('hero')
-  @Controller('hero')
-
+  
 
 @Controller('hero')
 export class HeroController {
@@ -44,7 +43,7 @@ async saveHero(@Res() res, @Body() heroDto: CreateHeroDto) {
 
 @ApiOperation({ summary: 'Get all heroes' })
 @ApiResponse({ status: 200, description: 'Return all heroes.' })
-@Get('/all')
+@Get('all')
 // hero/all
 async retrieveHeroes(@Res() res) {
   const heroes = await this.heroService.getAllFromDb();
